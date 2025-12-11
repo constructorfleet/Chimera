@@ -1,0 +1,17 @@
+---
+- hosts: local
+  tasks:
+    - name: Copy bus compose file
+      copy:
+        src: files/docker-compose.bus.yml
+        dest: ./docker-compose.bus.yml
+
+    - name: Template configs
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      loop:
+        - {src: "templates/configs/emqx/emqx.conf.j2", dest: "./configs/emqx/emqx.conf"}
+        - {src: "templates/configs/redis/redis.conf.j2", dest: "./configs/redis/redis.conf"}
+        - {src: "templates/configs/nats/nats.conf.j2", dest: "./configs/nats/nats.conf"}
+        - {src: "templates/configs/redpanda/redpanda.yaml.j2", dest: "./configs/redpanda/redpanda.yaml"}

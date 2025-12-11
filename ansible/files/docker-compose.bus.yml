@@ -1,0 +1,5 @@
+# ansible distributed bus compose
+version: "3.9"
+services:
+  bus:
+    image: alpine:latest

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chimera-vision-router"
+version = "0.1.0"
+description = "Vision routing service for Chimera."
+authors = [{name = "Chimera"}]
+requires-python = "==3.14"
+dependencies = ["chimera-common"]
+
+[tool.poetry.dependencies]
+python = "3.14"

@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  emqx:
+    image: emqx:latest
+    configs:
+      - source: emqx_config
+        target: /opt/emqx/etc/emqx.conf
+  redis:
+    image: redis:latest
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+  nats:
+    image: nats:latest
+    command: ["-c", "/etc/nats/nats.conf"]
+  redpanda:
+    image: redpandadata/redpanda:latest
+
+configs:
+  emqx_config:
+    file: ./configs/emqx/emqx.conf

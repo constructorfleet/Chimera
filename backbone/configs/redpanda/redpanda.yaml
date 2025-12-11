@@ -1,0 +1,3 @@
+# Redpanda configuration placeholder
+redpanda:
+  data_directory: /var/lib/redpanda/data
